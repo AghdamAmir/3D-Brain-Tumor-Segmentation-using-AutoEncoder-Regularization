@@ -1,0 +1,5 @@
+monai
+nibabel
+numpy
+torch
+torchvision
