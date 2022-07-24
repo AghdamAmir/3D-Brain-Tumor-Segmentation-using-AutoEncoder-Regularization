@@ -34,7 +34,7 @@ if torch.cuda.is_available(): torch.backends.cudnn.benchmark = True
 for epoch in range(0, epochs):
 
     # Train Model
-    print('\n\n\nEpoch: {}\n<Train>'.format(epoch))
+    print('\n\n\nEpoch: {}\n Train'.format(epoch))
     net.train(True)
     loss = 0
     lr = lr * (0.5 ** (epoch // 4))
@@ -56,9 +56,9 @@ for epoch in range(0, epochs):
 
 
     # Validate Model
-    print('\n\n<Validation>')
+    print('\n\n Validation')
     net.eval()
-    for module in net.module.modules():
+    for module in net.modules():
         if isinstance(module, torch.nn.modules.Dropout2d):
             module.train(True)
         elif isinstance(module, torch.nn.modules.Dropout):

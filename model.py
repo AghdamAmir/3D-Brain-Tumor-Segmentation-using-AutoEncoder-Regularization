@@ -77,6 +77,8 @@ class LinearUpSampling(nn.Module):
         out = nn.functional.interpolate(out, scale_factor=self.scale_factor, mode=self.mode, align_corners=self.align_corners)
 
         if skipx is not None:
+            if out.shape != skipx.shape: 
+              out = nn.functional.interpolate(out, size=skipx.shape[-3:], mode=self.mode, align_corners=self.align_corners)
             out = torch.cat((out, skipx), 1)
             out = self.conv2(out)
         

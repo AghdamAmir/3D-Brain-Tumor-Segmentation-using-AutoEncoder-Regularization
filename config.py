@@ -2,7 +2,7 @@
 inChans = 4
 
 # Input Image Shape
-input_shape = (4, 160, 240, 240)
+input_shape = (160, 192, 128)
 
 # Number of Output Classes
 seg_outChans = 3
